@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资讯</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-size: 100% 100%;
+        text-decoration: none;
+        list-style: none;
+    }
+    body{
+        background-color: #fff;
+        height: 1500px;
+    }
+    a{
+        text-decoration: none;
+        color: #666666;
+    }
+    .container{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .logo {
+        float: left;
+        width: 200px;
+    }
+    .logo a dl {
+        margin: 0;
+        padding: 0;
+    }
+    .logo a dl dt {
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+    .logo a dl dd {
+        float: right;
+        width: 120px;
+        margin: 0;
+        padding: 0;
+        margin-top: 8px;
+        border-left: 2px #F9C270 solid;
+        padding-left: 20px;
+        color: #595757;
+        font: 16px/22px 'Microsoft Yahei';
+    }
+    .logo a {
+        display: block;
+        margin-top: 8px;
+    }
+    .logo a dl dt img {
+        display: block;
+        height: 40px;
+        margin: 10px;
+        margin-left: 30px;
+    }
+    #nav{
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+    }
+    #nav li{
+        float: left;
+        width: 10%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-left: 35px;
+    }
+    #nav li a{
+        display: block;
+        height: 42px;
+        padding: 0 10px;
+        line-height: 42px;
+        font-size: 17px;
+        color: #050505;
+    }
+    #nav li a:hover {
+    color: #00a4ff;
+    }
+    .cls{
+        clear: both;
+    }
+    .newsallbox-wrap{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .newsall-leftbox{
+        width: 900px;
+        float: left;
+        margin-left: 300px;
+    }
+    .news-show-title{
+        width: 607px;
+        height: 35px;
+        font-weight: normal;
+        color: #333333;
+        font-size: 23px;
+    }
+    .news-show-ftitle{
+        font-size: 12px;
+        color: gray;
+    }
+    .news-show-box {
+        border-top: 1px #DDD solid;
+        margin-top: 20px;
+        width: 690px;
+        padding: 0 10px;
+    }
+    .from-txt-wrap {
+        padding: 10px 0 0 0;
+        border-top: 1px #DDD solid;
+        margin-top: 10px;
+    }
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        color: #666666;
+    }
+    /*footer*/
+    .footer-bg{
+      float: left;
+      width: 100%;
+      height: 400px;
+      background: #fff;
+      margin-top: 50px;
+    }
+    .footer-wrap{
+      width: 1080px;
+      margin: 20px auto 0 auto;
+      padding-bottom: 20px;
+    }
+    .flink-box{
+      width: 860px;
+      float: left;
+      margin-top: 50px;
+    }
+    .f-wb{
+      width: 200px;
+      float: right;
+    }
+    .flink-box h3.flink-title{
+      font: lighter 24px/40px 'Microsoft Yahei';
+      color: #333;
+    }
+    .flink-box select{
+      border: 1px solid #DDD;
+      font: lighter 14px/30px Microsoft YaHei;
+      height: 30px;
+      margin-right:20px;
+      width: 147px;
+      display: inline-block;
+    }
+    .f-wb{
+      margin-top: 30px;
+    }
+    .f-wb ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .f-wb ul li{
+      display: inline-block;
+      width: 90px;
+    }
+    .f-wb ul li a{
+      display: block;
+      text-decoration: none;
+    }
+    .f-wb ul li a img{
+      margin: 0 auto;
+      display: block;
+    }
+    .f-wb ul li a span{
+      display: block;
+      font: lighter 16px/50px 'Microsoft Yahei';
+      color: #666;
+      text-align: center;
+    }
+    .f-wb ul li.f-wxbox{
+      position: relative;
+    }
+    .f-wb ul li.f-wxbox .wx{
+      display: none;
+      width: 120px;
+      height:120px;
+      position: absolute;
+      z-index: 1000;
+      left:-10px;
+      top:-140px;
+      border: 3px #FFF solid;
+      box-shadow: 1px 3px 15px rgba(0,0,0,.5);
+    }
+    .f-underlink-box{
+      width: 520px;
+      height:35px;
+      margin: 20px auto auto;
+      overflow: hidden;
+    }
+    .f-underlink-box ul{
+      margin: 0;
+      padding: 0;
+      list-style:none;
+      width: 540px;
+      margin-left: -20px;
+    }
+    .f-underlink-box ul li{
+      float: left;
+      width: 160px;
+      margin-left: 20px;
+    }
+    .f-underlink-box ul li a{
+      text-decoration: none;
+      display: block;
+      font: lighter 18px/35px 'Microsoft Yahei';
+      color: #666;
+      text-align: center;
+    }
+    .f-underlink-box ul li a span{
+      vertical-align: middle;
+      transition: all .5s ease-out;
+    }
+    .f-underlink-box ul li a i{
+      font-size: 2.3rem;
+      margin-right: 10px;
+      vertical-align: middle;
+      transition: all .5s ease-out;
+    }
+    .f-underlink-box ul li a:hover span,
+    .f-underlink-box ul li a:hover i{
+      color: #002870;
+    }
+    .f-under-imglist{
+      margin-top: 30px;
+      text-align: center;
+    }
+    .f-under-imglist a{
+      display: inline-block;
+      margin: 0 20px;
+    }
+    .f-under-text{margin-top: 30px;}
+    .f-under-text P{
+      font: lighter 14px/22px 'Microsoft Yahei';
+      color: #666;
+      text-align: center;
+    }
+    .links {
+        float: left;
+        margin-top: 70px;
+    }
+    .links dl {
+        float: left;
+        margin-left: 100px;
+    }
+    .links dl dt {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+    .links dl dd a {
+        font-size: 12px;
+        color: gray;
+    }
+/*footer end*/
+</style>
+<html>
+    <div class="container">
+        <div class="logo">
+            <a href="">
+                <dl class="cl">
+                    <dt><img src="images/logo.png" alt="张家界旅游网"></dt>
+                    <dd>欢迎你访问<br />张家界旅游网</dd>
+                </dl>
+            </a>
+        </div>
+        <ul id="nav">
+            <li><a href="index.html" target="_blank">首页</a></li>
+            <li><a href="message.html" target="_blank">资讯</a></li>
+            <li><a href="line.html" target="_blank">线路</a></li>
+            <li><a href="hotel.html" target="_blank">酒店</a></li>
+            <li><a href="scenery.html" target="_blank">景点</a></li>
+            <li><a href="group.html" target="_blank">团购</a></li>
+            <li><a href="strategy.html" target="_blank">攻略</a></li>
+            <li><a href="login.html" target="_blank">登录</a></li>
+        </ul>
+        <div class="cls"></div>
+        <div class="newsallbox-wrap">
+            <div class="newsall-leftbox">
+                <div class="news-show-content">
+                    <h3 class="news-show-title">2021年全市非物质文化遗产业务知识培训成功举办</h3>
+                    <span class="news-show-ftitle">2021-11-26  来源：1318 </span>
+                    <div class="news-show-box">
+                        <p style="text-indent: 2em;">为贯彻《中华人民共和国非物质文化遗产法》有关精神，进一步提升非遗工作者的业务水平，增强我市非遗代表性项目保护单位的履责意识和履责能力，11月22日，我市组织举办了2021年全市非物质文化遗产业务知识培训班，特邀湖南省文旅厅非遗处处长颜喜、主任科员徐庶现场授课，市文旅广体局副局长朱芳、市文旅广体局党工委委员、副局长李慈忠，市文旅广体局非遗科、市文化馆（市非遗保护中心）全体人员，各区县文旅广体局分管领导、非遗股室负责人，各区县非遗保护中心负责人，各区县非遗项目保护单位负责人以及市级以上项目代表性传承人参加培训。
+                        </p>
+                        <p style="text-indent: 2em;">
+                        </p>
+                        <p style="text-indent: 2em;">开班仪式上，市文旅广体局副局长朱芳介绍了举办此次培训的目的和意义，她要求，参训学员要珍惜此次来之不易的培训机会，严格遵守纪律，要结合自身工作深入思考领会，增强学习实效性，为提升全市非遗工作水平贡献力量。
+                            <br/>
+                        </p>
+                        <p style="text-indent: 2em;">
+                        </p>
+                        <p style="text-indent: 2em;">
+                            培训课上，湖南省文旅厅非遗处处长颜喜以《非物质文化遗产的保护与实践》为题，从非物质文化遗产的定义、传承人的认定、非物质文化遗产的保护路径、实践方式、相关法律法规以及如何做好非遗保护工作六个方面进行了授课，其既有客观、理性的分析，又有具体生动的案例说明，使学员们切身感受到非遗保护工作的重要性和必要性，为大家在具体工作中提供了更为专业的指导和帮助。
+                        </p>
+                        <p style="text-indent: 2em;">
+                            <span style="text-indent: 2em;">随后，湖南省文旅厅非遗处主任科员徐庶对《非物质文化遗产代表性项目申报工作》进行了深入的解读，阐明了申报工作的最新导向和要求，展示了一些好的案例和经验做法，其观点独到、剖析深刻，学员们受益匪浅。
+                            </span></p>
+                    </div>
+                    <div class="from-txt-wrap">
+                        <p>
+                            <strong>下一篇：</strong><a href="#">张家界：加快建设世界一流旅游目的地</a>
+                        </p>
+                        <p>
+                            <strong>上一篇：</strong><a>没有了</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <div class="footer-bg">
+        <div class="footer-wrap cl">
+            <div class="flink-box">
+                <h3 class="flink-title">友情链接：</h3>
+                <select onchange="javascript:window.open(this.options[this.selectedIndex].value);this.selectedIndex=0">
+                    <option value="">张家界市政府网站</option>
+                    <option value="http://www.zjj.gov.cn">张家界公众信息网</option>
+                    <option value="http://www.zjjga.gov.cn">张家界公安信息网</option>
+                    <option value="http://www.zjjyd.gov.cn/">永定区政府网站</option>
+                    <option value="http://www.zjjwly.gov.cn/">武陵源区政府网站</option>
+                    <option value="http://www.sangzhi.gov.cn/">桑植县政府网站</option>
+                    <option value="http://www.zjjcl.gov.cn/">慈利县政府网站</option>
+                    <option value="http://www.zjjgood.com/">张家界市旅游局</option>
+                </select>
+                <select onchange="javascript:window.open(this.options[this.selectedIndex].value);this.selectedIndex=0">
+                    <option value="">各省旅游政务网站</option>
+                    <option value="http://www.bjta.gov.cn/">北京旅游网</option>
+                    <option value="http://www.tjtour.cn/">天津旅游网</option>
+                    <option value="http://www.hebeitour.com.cn/">河北旅游网</option>
+                    <option value="http://www.shanxichina.gov.cn/zh/index.shtml">山西旅游网</option>
+                    <option value="http://www.nmglyj.gov.cn/">内蒙古旅游网</option>
+                    <option value="http://www.lntour.gov.cn/">辽宁旅游网</option>
+                    <option value="http://www.jlta.gov.cn/">吉林旅游网</option>
+                    <option value="http://www.hljtour.gov.cn/">黑龙江旅游网</option>
+                    <option value="http://lyw.sh.gov.cn/">上海旅游网</option>
+                    <option value="http://www.jstour.com/">江苏旅游网</option>
+                    <option value="http://www.tourzj.gov.cn/">浙江旅游网</option>
+                    <option value="http://www.ahta.com.cn/">安徽旅游网</option>
+                    <option value="http://www.fjta.com/">福建旅游网</option>
+                    <option value="http://www.jxta.gov.cn/">江西旅游网</option>
+                    <option value="http://www.sdta.gov.cn/">山东旅游网</option>
+                    <option value="http://www.hnta.cn/">河南旅游网</option>
+                    <option value="http://www.hubeitour.gov.cn/">湖北旅游网</option>
+                    <option value="http://www.hnt.gov.cn/">湖南旅游网</option>
+                    <option value="http://www.gdta.gov.cn/">广东旅游网</option>
+                    <option value="http://www.gxta.gov.cn/">广西旅游网</option>
+                    <option value="http://www.visithainan.gov.cn/">海南旅游网</option>
+                    <option value="http://www.cqta.gov.cn/">重庆旅游网</option>
+                    <option value="http://www.scta.gov.cn/">四川旅游网</option>
+                    <option value="http://www.gztour.gov.cn/">贵州旅游网</option>
+                    <option value="http://www.innyo.com/">云南旅游网</option>
+                    <option value="http://www.xzta.gov.cn/">西藏旅游网</option>
+                    <option value="http://www.sxtour.com/">陕西旅游网</option>
+                    <option value="http://www.gsta.gov.cn/">甘肃旅游网</option>
+                    <option value="http://www.nxtour.com.cn/">宁夏旅游网</option>
+                    <option value="http://www.qhly.gov.cn/">青海旅游网</option>
+                    <option value="http://www.xinjiangtour.gov.cn/">新疆旅游网</option>
+                    <option value="http://www.discoverhongkong.com/china/index.jsp">香港旅游发展局</option>
+                    <option value="http://www.macautourism.gov.mo/">澳门特别行政区旅游局</option>
+                    <option value="http://www.btwql.gov.cn/">兵团旅游网</option>
+                </select>
+                <select onchange="javascript:window.open(this.options[this.selectedIndex].value);this.selectedIndex=0">
+                    <option value="">各市旅游政务网站</option>
+                    <option value="http://www.csta.gov.cn/">长沙旅游网</option>
+                    <option value="http://www.zzly.gov.cn/">株洲旅游网</option>
+                    <option value="http://www.xtly.net/">湘潭旅游网</option>
+                    <option value="http://www.hytour.com.cn/">衡阳旅游网</option>
+                    <option value="http://www.sylywsj.gov.cn/">邵阳旅游网</option>
+                    <option value="http://yytour.yueyang.gov.cn/lyj/index.htm">岳阳旅游网</option>
+                    <option value="http://changdets.com/">常德旅游网</option>
+                    <option value="http://lyj.yiyang.gov.cn/home.html">益阳旅游网</option>
+                    <option value="http://www.czly.czs.gov.cn/lywsj/">郴州旅欧网</option>
+                    <option value="http://www.yzly.gov.cn/">永州旅游网</option>
+                    <option value="http://www.hhly.gov.cn/">怀化旅游网</option>
+                    <option value="http://www.gotold.cn/">娄底旅游网</option>
+                    <option value="http://www.xxly.gov.cn/">湘西旅游网</option>
+                </select>
+                <select onchange="javascript:window.open(this.options[this.selectedIndex].value);this.selectedIndex=0">
+                    <option value="">国际旅游组织</option>
+                    <option value="http://www.fia.com/">国际汽车运动联合会</option>
+                    <option value="http://ec.europa.eu/enterprise/sectors/tourism/index_en.htm">欧盟委员会旅游事务处</option>
+                    <option value="http://www.pata.org/">亚太旅游协会</option>
+                    <option value="http://www.apec.org/">亚太经合组织</option>
+                    <option value="http://www.asta.org/">美国旅行代理商协会</option>
+                    <option value="http://www.womenintourism.gr/annual_convention/index.html">妇女旅游组织国际联合会</option>
+                    <option value="http://ih-ra.com/">国际饭店与餐饮协会</option>
+                </select>
+                <select onchange="javascript:window.open(this.options[this.selectedIndex].value);this.selectedIndex=0">
+                    <option value="">友情链接</option>
+                    <option value="https://www.zjjw.com">张家界旅游官网</option>
+                    <option value="https://www.zjjw.com">张家界旅游网</option>
+                    <option value="http://www.zjjgf.com">张家界旅游集团</option>
+                    <option value="http://www.pinchain.com/">品橙旅游</option>
+                </select>
+            </div>
+            <div class="f-wb">
+                <ul>
+                    <li class="f-wxbox">
+                        <a href="javascript:;">
+                            <img src="images/weixin.png" alt=""><span>关注微信</span><img src="images/wx.jpg" class="wx" />
+                        </a>
+                    </li>
+                    <li><a href=""><img src="images/weibo.png" alt=""><span>关注微博</span></a></li>
+                </ul>
+            </div>
+            <div class="cl"></div>
+            <div class="f-underlink-box cl">
+                <ul>
+                    <li><a href="#"><i class="iconfont">&#xe600;</i><span>投诉中心</span></a></li>
+                    <li><a href="#"><i class="iconfont">&#xe664;</i><span>景区数据</span></a></li>
+                    <li><a href="#"><i class="iconfont">&#xe689;</i><span>全域通</span></a></li>
+                </ul>
+            </div>
+            <div class="links">
+                <dl>
+                    <dt>去旅游</dt>
+                    <dd><a href="#">跟团游</a></dd>
+                    <dd><a href="#">海岛游</a></dd>
+                    <dd><a href="#">自助游</a></dd>
+                    <dd><a href="#">亲子游</a></dd>
+                    <dd><a href="#">蜜月游</a></dd>
+                </dl>
+                <dl>
+                    <dt>乘交通</dt>
+                    <dd><a href="#">机票</a></dd>
+                    <dd><a href="#">机票+酒店</a></dd>
+                    <dd><a href="#">游轮</a></dd>
+                    <dd><a href="#">定制专线</a></dd>
+                    <dd><a href="#">客服推荐</a></dd>
+                </dl>
+                <dl>
+                    <dt>找优惠</dt>
+                    <dd><a href="#">特卖订酒店</a></dd>
+                    <dd><a href="#">积分优惠</a></dd>
+                    <dd><a href="#">银行特惠优</a></dd>
+                    <dd><a href="#">银行分期游</a></dd>
+                </dl>
+                <dl>
+                    <dt>看攻略</dt>
+                    <dd><a href="#">攻略</a></dd>
+                    <dd><a href="#">旅客游记</a></dd>
+                    <dd><a href="#">达人玩法</a></dd>
+                    <dd><a href="#">驴友结伴</a></dd>
+                </dl>
+                <dl>
+                    <dt>查服务</dt>
+                    <dd><a href="#">帮助中心</a></dd>
+                    <dd><a href="#">会员中心</a></dd>
+                    <dd><a href="#">旅行保障</a></dd>
+                    <dd><a href="#">航班查询</a></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!--footer end-->
+</body>
+</html>

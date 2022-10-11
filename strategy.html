@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>攻略</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-size: 100% 100%;
+        text-decoration: none;
+        list-style: none;
+    }
+    body{
+        background-color: #fff;
+        height: 4000px;
+    }
+    a{
+        text-decoration: none;
+    }
+    .container{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .logo {
+        float: left;
+        width: 200px;
+    }
+    .logo a dl {
+        margin: 0;
+        padding: 0;
+    }
+    .logo a dl dt {
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+    .logo a dl dd {
+        float: right;
+        width: 120px;
+        margin: 0;
+        padding: 0;
+        margin-top: 8px;
+        border-left: 2px #F9C270 solid;
+        padding-left: 20px;
+        color: #595757;
+        font: 16px/22px 'Microsoft Yahei';
+    }
+    .logo a {
+        display: block;
+        margin-top: 8px;
+    }
+    .logo a dl dt img {
+        display: block;
+        height: 40px;
+        margin: 10px;
+        margin-left: 30px;
+    }
+    #nav{
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+    }
+    #nav li{
+        float: left;
+        width: 10%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-left: 35px;
+    }
+    #nav li a{
+        display: block;
+        height: 42px;
+        padding: 0 10px;
+        line-height: 42px;
+        font-size: 17px;
+        color: #050505;
+    }
+    #nav li a:hover {
+    color: #00a4ff;
+    }
+    .cls{
+        clear: both;
+    }
+    div {
+    display: block;
+    }
+    .cl, .clearfix {
+        zoom: 1;
+    }
+    .shiqing-wrap {
+        width: 1080px;
+        margin: 0 auto;
+    }
+    .pz-mjshow-wrap {
+        width: 1080px;
+    }
+    dl {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    dt {
+        display: block;
+    }
+    dd {
+        display: block;
+        margin-inline-start: 40px;
+    }
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    h3 {
+        display: block;
+        font-size: 1.17em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+    .pz-mjshow-titlebox {
+        width: 1080px;
+        height: 60px;
+        overflow: hidden;
+    }
+    .pz-mjshow-titlebox dt {
+        width: 960px;
+        height: 60px;
+        float: left;
+    }
+    .pz-mjshow-titlebox dt h3 {
+        font: 400 24px/30px 'Microsoft Yahei';
+        color: #666;
+        margin: 0;
+    }
+    .mj-show-posWrap {
+        width: 1080px;
+        overflow: hidden;
+        margin: 30px 0;
+    }
+    .mj-show-contents {
+        margin-top: 20px;
+        width: 1080px;
+        height: 4900px;
+        padding: 20px 30px;
+        border: 1px #DDD solid;
+    }
+    .gl-titles-wrap {
+        width: 1018px;
+        overflow: hidden;
+    }
+    .gl-titles-wrap dt {
+        width: 760px;
+        height: 40px;
+        float: left;
+    }
+    .gl-titles-wrap dt span.gl-ywday {
+        color: #666;
+        font: 300 18px/40px 'Microsoft Yahei';
+        margin-right: 10px;
+    }
+    
+    .gl-titles-wrap dt span {
+        display: inline-block;
+    }
+    .iconfont {
+        font-family: "iconfont" !important;
+        font-size: 16px;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .gl-titles-wrap dt span.gl-ywday i {
+        line-height: 40px;
+        font-size: 1.6rem;
+        margin-right: 5px;
+        color: #666;
+    }
+    .gl-titles-wrap dt span.gl-ywnum {
+        color: #666;
+        font: 300 18px/40px 'Microsoft Yahei';
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+    .gl-titles-wrap dt span.gl-ywnum i {
+        line-height: 40px;
+        font-size: 1.6rem;
+        margin-right: 5px;
+        color: #666;
+    }
+    .gl-titles-wrap dd {
+        width: 240px;
+        height: 40px;
+        float: right;
+        margin: 0 0 0 0;
+    }
+    .gl-titles-wrap dd span {
+        display: inline-block;
+    }
+    .gl-titles-wrap dd span.gl-times {
+        color: #666;
+        font: 300 14px/40px 'Microsoft Yahei';
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+    .gl-titles-wrap dd span.gl-times i {
+        line-height: 40px;
+        font-size: 1rem;
+        margin-right: 5px;
+        color: #666;
+    }
+    .gl-titles-wrap dd span.gl-views {
+        color: #666;
+        font: 300 14px/40px 'Microsoft Yahei';
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+    .gl-listbox {
+        width: 1018px;
+        overflow: hidden;
+    }
+    .gl-listbox-title {
+        font: 300 18px/40px 'Microsoft Yahei';
+        color: #666;
+    }
+    .gl-listbox-title i {
+        line-height: 40px;
+        color: #999;
+        font-size: 1.8rem;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    .gl-listbox p {
+        font: 300 16px/30px 'Microsoft Yahei';
+        color: #666;
+    }
+    /*footer*/
+    .footer-bg{
+      width: 100%;
+      height: 400px;
+      background: #fff;
+      margin-top: 50px;
+    }
+    .footer-wrap{
+      width: 1080px;
+      margin: 20px auto 0 auto;
+      padding-bottom: 20px;
+    }
+    .flink-box{
+      width: 860px;
+      float: left;
+      margin-top: 50px;
+    }
+    .f-wb{
+      width: 200px;
+      float: right;
+    }
+    .flink-box h3.flink-title{
+      font: lighter 24px/40px 'Microsoft Yahei';
+      color: #333;
+    }
+    .flink-box select{
+      border: 1px solid #DDD;
+      font: lighter 14px/30px Microsoft YaHei;
+      height: 30px;
+      margin-right:20px;
+      width: 147px;
+      display: inline-block;
+    }
+    .f-wb{
+      margin-top: 30px;
+    }
+    .f-wb ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .f-wb ul li{
+      display: inline-block;
+      width: 90px;
+    }
+    .f-wb ul li a{
+      display: block;
+      text-decoration: none;
+    }
+    .f-wb ul li a img{
+      margin: 0 auto;
+      display: block;
+    }
+    .f-wb ul li a span{
+      display: block;
+      font: lighter 16px/50px 'Microsoft Yahei';
+      color: #666;
+      text-align: center;
+    }
+    .f-wb ul li.f-wxbox{
+      position: relative;
+    }
+    .f-wb ul li.f-wxbox .wx{
+      display: none;
+      width: 120px;
+      height:120px;
+      position: absolute;
+      z-index: 1000;
+      left:-10px;
+      top:-140px;
+      border: 3px #FFF solid;
+      box-shadow: 1px 3px 15px rgba(0,0,0,.5);
+    }
+    .f-underlink-box{
+      width: 520px;
+      height:35px;
+      margin: 20px auto auto;
+      overflow: hidden;
+    }
+    .f-underlink-box ul{
+      margin: 0;
+      padding: 0;
+      list-style:none;
+      width: 540px;
+      margin-left: -20px;
+    }
+    .f-underlink-box ul li{
+      float: left;
+      width: 160px;
+      margin-left: 20px;
+    }
+    .f-underlink-box ul li a{
+      text-decoration: none;
+      display: block;
+      font: lighter 18px/35px 'Microsoft Yahei';
+      color: #666;
+      text-align: center;
+    }
+    .f-underlink-box ul li a span{
+      vertical-align: middle;
+      transition: all .5s ease-out;
+    }
+    .f-underlink-box ul li a i{
+      font-size: 2.3rem;
+      margin-right: 10px;
+      vertical-align: middle;
+      transition: all .5s ease-out;
+    }
+    .f-underlink-box ul li a:hover span,
+    .f-underlink-box ul li a:hover i{
+      color: #002870;
+    }
+    .f-under-imglist{
+      margin-top: 30px;
+      text-align: center;
+    }
+    .f-under-imglist a{
+      display: inline-block;
+      margin: 0 20px;
+    }
+    .f-under-text{margin-top: 30px;}
+    .f-under-text P{
+      font: lighter 14px/22px 'Microsoft Yahei';
+      color: #666;
+      text-align: center;
+    }
+    .links {
+        float: left;
+        margin-top: 70px;
+    }
+    .links dl {
+        float: left;
+        margin-left: 100px;
+    }
+    .links dl dt {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+    .links dl dd a {
+        font-size: 12px;
+        color: gray;
+        margin-left: -40px;
+    }
+/*footer end*/
+</style>
+<body>
+    <div class="container">
+        <div class="logo">
+            <a href="">
+                <dl class="cl">
+                    <dt><img src="images/logo.png" alt="张家界旅游网"></dt>
+                    <dd>欢迎你访问<br />张家界旅游网</dd>
+                </dl>
+            </a>
+        </div>
+        <ul id="nav">
+            <li><a href="index.html" target="_blank">首页</a></li>
+            <li><a href="message.html" target="_blank">资讯</a></li>
+            <li><a href="line.html" target="_blank">线路</a></li>
+            <li><a href="hotel.html" target="_blank">酒店</a></li>
+            <li><a href="scenery.html" target="_blank">景点</a></li>
+            <li><a href="group.html" target="_blank">团购</a></li>
+            <li><a href="strategy.html" target="_blank">攻略</a></li>
+            <li><a href="login.html" target="_blank">登录</a></li>
+        </ul>
+        <div class="cls"></div>
+    </div>
+    <div class="shiqing-wrap">
+      <div class="pz-mjshow-wrap">
+          <dl class="pz-mjshow-titlebox cl">
+              <dt>
+                  <h3>张家界新户外线路旅游攻略</h3>
+              </dt>
+              <dd></dd>
+          </dl>
+          <div class="cl"></div>
+  <!-- topbanner-->        
+  <div class="mj-show-posWrap">
+              <div class="mj-show-contents">
+                  <div class="gl-list-infoWrap">
+                      <dl class="gl-titles-wrap cl">
+                          <dt>
+                            <span class="gl-ywday"><i class="iconfont">&#xe68c;</i>游玩天数：1天</span>
+                            <span class="gl-ywnum"><i class="iconfont">&#xe6b6;</i>游玩人数：5人</span>
+                          </dt>
+                          <dd>
+                              <span class="gl-times"><i class="iconfont">&#xe8a9;</i>2017/08/12</span>
+                              <span class="gl-views"><i class="iconfont">&#xe665;</i>32159</span>
+                          </dd>
+                      </dl>
+                      <div class="cl"></div>
+                      <div class="gl-listbox">
+                        <h3 class="gl-listbox-title"><i class="iconfont">&#xe607;</i>游玩景点：张家界&gt;十里画廊&gt;天子山&gt;魅力湘西</h3>                        <p style="text-indent: 2em;"><span style="text-indent: 2em;">1.亚洲腹地最大的一片原始次森林——八大公山</span><span style="text-indent: 2em;">&nbsp;</span></p><p style="text-indent: 2em;">
+                          线路简介：八大公山自然保护区，位于我国亚热带生态系统的坐标轴心，呈东西走向，山峦一般在海拔1000米左右。植物种类达3000种以上，如被国外誉称为“中国鸽子树”的珙桐，地球上濒于灭绝的“活化石”香果树，以及毛红椿、红花玉兰等，均为世界稀有。动物多于百种，其中有珍贵动物金鸡、苏门羚、华南虎、娃娃鱼等，大、小熊猫也有发现。</p><p style="text-indent: 2em;">
+                            探险资源：斗蓬峰，七岩百丈瀑，仙女池，牛头山，青龙湾七岩百丈瀑布</p><p style="text-indent: 2em;"><span style="text-indent: 2em;">七岩百丈瀑布位于四门岩林区寮叶湾河谷悬崖上，有三级百米瀑布。四门岩水的激流，顺峡谷飞泻而下，碰岩击石，声如雷鸣，跌落至第三级时，绕七座凌空而立的青色岩塔后，银瀑像绸缎分开，汇入溪谷碧水中，从瀑顶到谷底，高300多米，似条条白练飘扬仙女池仙女池位于天平山腰楠木河源头的深山峡谷处。300多米高的梯级飞瀑帘飘下，落入“半亩澄潭，一汪绉绿”的浴池，相传七仙女下凡在此沐浴。池畔藤蔓缠掩，龙虾花以及芳草争奇斗妍，散发出幽香，遂又名香池。</span><span style="text-indent: 2em;">&nbsp;</span></p><p style="text-indent: 2em;">
+                            牛头山牛头山位于天平山林区珍贵树木种子园附近，山形似牛头，海拔约1300米。大雨初霁时，观云雾如大海涌涛浪，山梁、密林尽没其中。艳阳透过层层云雾，洒下万道金光，朵朵白云被涂上五颜六色的霞光，若夕阳斜照，云海通红。置身山顶，如驾云登天，飘然欲仙。<span style="text-indent: 2em;">&nbsp;</span></p><p style="text-indent: 2em;">
+                            风景指数：☆☆☆☆☆</p><p style="text-indent: 2em;">
+                            强度指数：☆☆☆☆☆</p><p style="text-indent: 2em;">
+                            难度指数：☆☆☆☆☆</p><p style="text-indent: 2em;">
+                            路线：市区－四门岩林场－大梁山－青草沟－1号营地茶园古桥－八大公山腹地－2号营地长平沟－林中隧道－顶坪哨所－3号营地了望台－珙桐林－车齐坪－市区(行程四天三晚)</p><p style="text-indent: 2em;">2.张家界的屋脊——七星山</p><p style="text-indent: 2em;">
+                            张家界最难爬的山</p><p style="text-indent: 2em;">
+                            线路简介：七星山雄距于永定大坪境内。此山孤峰高耸，四面绝壁，海拔1528.6米，比与之相邻的天门山还高10米。顶部面积2平方公里，山顶平均气温9℃，全年无夏。在山的东側有一条黑峡谷，名曰：虾米溪。石壁从溪边横空而起，顶天立地。仰望崖壁欲坠，通壁无挂，强健雄浑，锐不可当。壁前一谷拦抱，灵空清仓幽。在溪边悬崖绝壁上，一股清泉，一泻万丈，跌落于绝壁半腰的深潭之中。很早以前，山顶无人定居。战乱时，乡民为避战乱，攀藤附葛到达山顶生活，且开辟了唯一一条栈道。改革开放以后，山民陆续下迁，现今山顶只有两、三户人家，且多为老年，几乎与世隔绝。山顶林密草深，一条几乎已绝人迹的野经逾回在荒草密林间。</p><p style="text-indent: 2em;">
+                            风景指数：☆☆☆☆☆</p><p style="text-indent: 2em;">
+                            强度指数：☆☆☆</p><p style="text-indent: 2em;">
+                            难度指数：☆☆☆☆</p><p style="text-indent: 2em;">
+                            路线：市区－仙人溪—虾米溪－１号营地－大屿谷－仙人飞瀑－猴子岭－２号营地－古栈道－大坪镇－市区（三天两晚行程）</p><p style="text-indent: 2em;">3.仙境圣地——宝峰山</p><p style="text-indent: 2em;">
+                            线路简介：宝峰山，又名“宝凤山”，宝峰山位于索溪峪南部，背靠宝峰湖，出至百丈峡，西与天门山对峙，海拔1212.4米！宋建“宝峰寺”于山顶，正殿、菩萨依然健在，中殿及外殿仅剩框架。庙左有“舍身岩”，形似舌，延伸出绝壁三米，其下，一挂绝壁，高约200米。庙右有泉水从石缝流出，清凉甜润（水源在绝壁中段，可见不可求）。整个庙宇悬立在绝壁之上，可媲美华山绝顶，有“胜武当”之称！它三面悬崖万丈，惊险万端。仅一面有一条山径可上峰顶。</p><p style="text-indent: 2em;">
+                            灵贞观为宋朝所建，清代咸丰年间曾经维修过。此庙因山高路远，交通不便，才躲过了“那非常年代”的破坏，被完整的保存下来。它是武陵源风区内唯一完整保存下的一座寺庙。此庙规模并不大，只有5间房屋：第一间，为香客小憩室，大门上刻有“灵贞观”3个字。第二间比第一间略大，门额上刻有“胜武当”，只见一块石板悬空伸出，石板下面万丈深渊，踏上去令人毛骨悚然。舍身岩的缝隙里长有几株铁梅，时愈千年，仍生长茂盛，傲然挺立。</p><p style="text-indent: 2em;">
+                            庙宇的第三间是神堂，内有菩萨与香炉，门额上有“宝凤仙山”4个大字。第四间较小，可能是和尚下榻吃斋的地方。第五间房屋尽头小门外面有一眼泉水，长流不绝，其味甘甜，相传这是一股神水，喝了可以替人消灾祛病，永保平安。</p><p style="text-indent: 2em;">
+                            风景指数：☆☆☆☆</p><p style="text-indent: 2em;">
+                            强度指数：☆☆</p><p style="text-indent: 2em;">
+                            难度指数：☆☆</p><p style="text-indent: 2em;">
+                            路线：市区－董家峪水库－1号营地长坪－达宝峰山脚－蘑菇岩－宝峰寺－楠竹林－协和－百丈峡－市区(行程两天一晚)</p><p style="text-indent: 2em;">4.极限峡谷——无底峡</p><p style="text-indent: 2em;">
+                            线路简介：无底峡又名穿天沟，是白石、西莲、人潮溪三乡交界的一条幽深纵横的大峡谷。其谷深不可测，两岸古木参天，因峡长谷深，从古至今都无人涉足。无底峡分三段。上段叫黄狮河，是一条裂谷地缝，谷底离地表约三千多米；中段叫落香峡，有传说中的“瀑落香潭”；下段叫五里溪，一条五里路长的古栈道通过峡口，将白石和人潮溪两乡连接起来。整条峡谷约百里有余，鸟鸣猿啼，幽潭飞瀑，弯转回肠，。峡谷间林莽树长，石壁上古藤攀附。谷底一条清流，时而悬如白练，时而跌入深潭……</p><p style="text-indent: 2em;">
+                            强度指数：☆☆☆</p><p style="text-indent: 2em;">
+                            难度指数：☆☆☆</p><p style="text-indent: 2em;">
+                            路线：市区－江垭水库－五里溪－1号营地－五里坡－竹子坡－岩门村－马齿河－2号营地－落香峡－古栈道－金藏河－江垭水库－市区(行程三天两晚)</p><p style="text-indent: 2em;">5.溯溪经典——红河谷</p><p style="text-indent: 2em;">
+                            线路简介：“红河谷”位于一个林场的山脚下，整个隐藏在群山之间，人迹罕至，溪水冰凉清澈，因河谷布满红色的石头，且只有踩在红色石头上不滑而得名！沿途一共十四个两米到四米不等的落差，三条瀑布，其中一条为三个梯级的瀑布，可以攀爬．这里山清水秀，空气清新，是徒步，游泳，溯溪的好去处！</p><p style="text-indent: 2em;">
+                            强度指数：☆☆</p><p style="text-indent: 2em;">
+                            难度指数：☆☆</p><p style="text-indent: 2em;">
+                            路线：市区－大坪－堡子界林场－山羊溪入口－黑潭－1号营地－长潭－林场哨所－月垭村－大坪－市区(行程两天一晚)</p><p style="text-indent: 2em;">6.湖南九寨沟——借母溪</p><p style="text-indent: 2em;">
+                            线路简介：“古藤老树长尾雉沟谷流水有人家”这就是被誉为“湖南九寨沟”的借母溪——她一处国内罕见的沟谷原始次生林。</p><p style="text-indent: 2em;">
+                            这里是摄影着的天堂，是一个集徒步、溯溪、探洞、攀岩、速降、漂流为一体的全方位天然户外运动场。借母溪当初并不叫借母溪，而称寄母溪，说是一孝子，为避世上纷争，将慈母背负至此，寄居深山老林，寻花采果奉养天年；也有说是因为这里荒蛮闭塞，没有女子肯下嫁如此荒僻之地，当地男人只好借母养儿繁衍生命；后来因这里古树名木种类繁多，是原始天然的植物王国，所以又称佼木溪。借母溪有4溪、8垴、3垭、81岭山尖、23个山湾、62条沟、8处悬崖。</p><p style="text-indent: 2em;">
+                            强度指数：☆☆☆</p><p style="text-indent: 2em;">
+                            难度指数：☆☆</p><p style="text-indent: 2em;">
+                            路线：市区－大坪－达木郎溪小学－锅锅垴－小溪国家森林保护区－鱼水坪－草坪营地－杉木州－桐车坪－市区(行程两天一晚)</p><p style="text-indent: 2em;">
+                            特别提醒：</p><p style="text-indent: 2em;">
+                            1.建议大家带上一些学习用品，还有一些用不上的衣物，可以亲自捐给山寨小学的孩子们。</p><p style="text-indent: 2em;">
+                            2.锅锅垴海拔1200米，垂直提升快，注意加减衣物。</p><p style="text-indent: 2em;">
+                            3.小溪国家森林保护区已经禁渔，所以在看到溪水里的鱼儿的时候一定要管住自己的手脚。</p><p style="text-indent: 2em;">7.公社奇观——泰华大峡谷</p><p style="text-indent: 2em;">
+                            线路简介：大地传奇、山川灵异武陵腹地惊现奇迹——泰华大峡谷绝壁纵叠，溪瀑横悬，崖树斜逸，异草遍被。一处忘尘绝虑纵情挥洒的性灵空间，一所挑战自我放飞激情的生命课堂，一段与自然最贴近的经历，一场同自我最深刻的对话。</p><p style="text-indent: 2em;">
+                            泰华大峡谷位于澧水河畔，武陵腹地，峡谷森林茂密，溪流密布，全峡峻险壮美，尤具古朴之风。峡谷全长约8公里，峡谷最深处高差达300余米，最窄处仅容一人通过。从峡谷两侧山顶下至峡底，森林茂密，古藤缠绕，令人赞叹；而峭壁坡陡路险，崎岖难行。因峡深壁陡，林荫蔽日，谷中很多地方终年难见天日。正因为这些，在这峡里孕育了无数天眼，地穴，和撼天动地的人民公社渠。</p><p style="text-indent: 2em;">
+                            人民公社渠构筑在风景如画的泰华大峡谷悬崖峭壁之上，达到了“雄者愈雄，险者愈险”的审美高度，给人以巨大的震撼，其地势险峻，工程之艰巨，堪称人间奇迹。是土家人用双手在这绝壁开凿出来的人工天河，天造山，人造渠。人民公社渠展示着土家人民征服自然、改造自然的丰功伟绩，闪烁着艰苦创业、自强不息的精神风采。还等什么，背上你的背包，将美景与奇观收获回来！</p><p style="text-indent: 2em;">
+                            风景指数：☆☆☆</p><p style="text-indent: 2em;">
+                            强度指数：☆☆</p><p style="text-indent: 2em;">
+                            难度指数：☆☆☆</p><p style="text-indent: 2em;">
+                            路线：市区－武陵源－三官寺－双坪－黄渠湾－公社水渠－山洞－长木梯－双垭村－1号营地－白龙峡－宋家坪－武陵源－市区(行程两天一晚)</p><p style="text-indent: 2em;">8.闺门初开——上官幽谷</p><p style="text-indent: 2em;">
+                            线路简介：这里，有湘西最美的瀑布和张家界（微博）最为秀丽的峡谷！这里，有历史悠远的宋代官道和明代的石屋书院遗址！这里，便是我们最新发现的一条秀丽的峡谷——上官幽谷！在天门山与七星山之间，一条几乎被人遗忘的宋代官道横亘其间，官道上那被马蹄和脚板磨的发亮的青石板，诉说着曾经的沧桑。</p><p style="text-indent: 2em;">
+                            一座承载了千万年历史的石拱小桥，便是幽谷的入口处顺幽谷前进，石壁如削，两山岈合，上有古藤倒挂，下有潺潺流水，谷内两边绝壁，两头可通，有一两华里不见天际，常年阴阳闭合，清风送爽，如入人间仙境。</p><p style="text-indent: 2em;">
+                            强度指数：☆</p><p style="text-indent: 2em;">
+                            难度指数：☆</p><p style="text-indent: 2em;">
+                            路线：市区－刑家巷－竿子坪－老道湾－村长家－铁梯－栈道－飞瀑潭－私塾遗址－1号营地－炼矿遗址－断桥－村长家－市区(行程两天一晚)</p><p style="text-indent: 2em;">9.高山草甸——南滩</p><p style="text-indent: 2em;">
+                            线路简介：南滩——横垣在湖南、湖北交界线上的高山草场。</p><p style="text-indent: 2em;">
+                            南滩——一个让人放逐梦想的绿色海洋。蓝天、白云、绿草、成群牛羊……在这个秋天，打起行装，一起去高山草甸，一起去放逐心情，放飞梦想，一起去吹高山风，去晒高山的太阳……打开湖南地图，找到张家界（微博）的“西藏”--白石乡，你就找到了南滩草场。“草场”海拔1500多米，地理环境相对偏僻，北面与湖北省交界，绵延数千米的悬崖，构成了一条长长的风景线。</p><p style="text-indent: 2em;">
+                            要去南滩，可不太容易，得先看完娄水河两岸的风光，穿越无底峡谷（有路可寻），“人民公社”时期修筑在峭壁上的栈道，走起来让你两腿酸软，全身发抖，因为它几乎是悬着的。一路上，如果运气好，还可看到成群的攀岩野猴，能飞的松鼠……峡谷尽头即是白石境内的南滩草场了。草场上种了许多知名的和不知名的外国草种，黑麦草、三叶草……绿得流油。牛、羊成群，游走不定，悠然自得。漫游在碧绿的牧草丛中，懒洋洋的，阳光下你会不自觉地倒下，如有爱侣相伴倒也陶然忘返，要不，换个地方，去附近的白亩人工湖里垂钓，躺在帐篷里，注目水面上的浮标，那十二分的惬意！忽然，几只野鸭掠过水面，弄碎了水中仙女般丽人的倒影……</p><p style="text-indent: 2em;">
+                            强度指数：☆☆</p><p style="text-indent: 2em;">
+                            难度指数：☆☆</p><p style="text-indent: 2em;">
+                            路线：市区－熊家庄－江垭水库－五里溪－五里坡－白石乡－南滩－1号营地－栈道－白石乡－市区(行程两天一晚)</p><p style="text-indent: 2em;">10.徒步漓江——青岩溪</p><p style="text-indent: 2em;">
+                            线路简介：当你看到这些照片的时候，不要以为她是九寨，也不要以为她是漓江，她是一条刚刚我们发现的徒步线路！——青岩溪在这里你能感受到“徒步漓江”的全部，你也能体验到“放牧九寨”的所有；在这里有沉积千年历史的古商道，有经历战乱的关口、卡门；这里有凌空搭架在绝壁上的飞桥，有写意心情的高山草甸。并且，只要你徒步这条线路，你将在这条线路中段的一座宋代卡门得到你终身的身份象征——驴证。</p><p style="text-indent: 2em;">
+                            这里比漓江漂亮，不比虎跳逊色，还有宋代古商道，天然攀壁，徒步这条线路，今生你不会后悔。有时间走三天。没有时间走两天，都有不同的风景。</p><p style="text-indent: 2em;">
+                            风景指数：☆☆☆</p><p style="text-indent: 2em;">
+                            强度指数：☆☆</p><p style="text-indent: 2em;">
+                            难度指数：☆☆</p><p style="text-indent: 2em;">
+                            路线：市区－刑家巷－仙人溪水库－交织溪－犀牛潭－中柱垭－1号营地－明朝卡门－熊壁岩山脚－古栈道－天坪村－市区(行程两天一晚)</p>
+                      </div>
+                  </div>  
+    </div>
+    <!--footer-->
+    <div class="footer-bg">
+        <div class="footer-wrap cl">
+            <div class="flink-box">
+                <h3 class="flink-title">友情链接：</h3>
+                <select onchange="javascript:window.open(this.options[this.selectedIndex].value);this.selectedIndex=0">
+                    <option value="">张家界市政府网站</option>
+                    <option value="http://www.zjj.gov.cn">张家界公众信息网</option>
+                    <option value="http://www.zjjga.gov.cn">张家界公安信息网</option>
+                    <option value="http://www.zjjyd.gov.cn/">永定区政府网站</option>
+                    <option value="http://www.zjjwly.gov.cn/">武陵源区政府网站</option>
+                    <option value="http://www.sangzhi.gov.cn/">桑植县政府网站</option>
+                    <option value="http://www.zjjcl.gov.cn/">慈利县政府网站</option>
+                    <option value="http://www.zjjgood.com/">张家界市旅游局</option>
+                </select>
+                <select onchange="javascript:window.open(this.options[this.selectedIndex].value);this.selectedIndex=0">
+                    <option value="">各省旅游政务网站</option>
+                    <option value="http://www.bjta.gov.cn/">北京旅游网</option>
+                    <option value="http://www.tjtour.cn/">天津旅游网</option>
+                    <option value="http://www.hebeitour.com.cn/">河北旅游网</option>
+                    <option value="http://www.shanxichina.gov.cn/zh/index.shtml">山西旅游网</option>
+                    <option value="http://www.nmglyj.gov.cn/">内蒙古旅游网</option>
+                    <option value="http://www.lntour.gov.cn/">辽宁旅游网</option>
+                    <option value="http://www.jlta.gov.cn/">吉林旅游网</option>
+                    <option value="http://www.hljtour.gov.cn/">黑龙江旅游网</option>
+                    <option value="http://lyw.sh.gov.cn/">上海旅游网</option>
+                    <option value="http://www.jstour.com/">江苏旅游网</option>
+                    <option value="http://www.tourzj.gov.cn/">浙江旅游网</option>
+                    <option value="http://www.ahta.com.cn/">安徽旅游网</option>
+                    <option value="http://www.fjta.com/">福建旅游网</option>
+                    <option value="http://www.jxta.gov.cn/">江西旅游网</option>
+                    <option value="http://www.sdta.gov.cn/">山东旅游网</option>
+                    <option value="http://www.hnta.cn/">河南旅游网</option>
+                    <option value="http://www.hubeitour.gov.cn/">湖北旅游网</option>
+                    <option value="http://www.hnt.gov.cn/">湖南旅游网</option>
+                    <option value="http://www.gdta.gov.cn/">广东旅游网</option>
+                    <option value="http://www.gxta.gov.cn/">广西旅游网</option>
+                    <option value="http://www.visithainan.gov.cn/">海南旅游网</option>
+                    <option value="http://www.cqta.gov.cn/">重庆旅游网</option>
+                    <option value="http://www.scta.gov.cn/">四川旅游网</option>
+                    <option value="http://www.gztour.gov.cn/">贵州旅游网</option>
+                    <option value="http://www.innyo.com/">云南旅游网</option>
+                    <option value="http://www.xzta.gov.cn/">西藏旅游网</option>
+                    <option value="http://www.sxtour.com/">陕西旅游网</option>
+                    <option value="http://www.gsta.gov.cn/">甘肃旅游网</option>
+                    <option value="http://www.nxtour.com.cn/">宁夏旅游网</option>
+                    <option value="http://www.qhly.gov.cn/">青海旅游网</option>
+                    <option value="http://www.xinjiangtour.gov.cn/">新疆旅游网</option>
+                    <option value="http://www.discoverhongkong.com/china/index.jsp">香港旅游发展局</option>
+                    <option value="http://www.macautourism.gov.mo/">澳门特别行政区旅游局</option>
+                    <option value="http://www.btwql.gov.cn/">兵团旅游网</option>
+                </select>
+                <select onchange="javascript:window.open(this.options[this.selectedIndex].value);this.selectedIndex=0">
+                    <option value="">各市旅游政务网站</option>
+                    <option value="http://www.csta.gov.cn/">长沙旅游网</option>
+                    <option value="http://www.zzly.gov.cn/">株洲旅游网</option>
+                    <option value="http://www.xtly.net/">湘潭旅游网</option>
+                    <option value="http://www.hytour.com.cn/">衡阳旅游网</option>
+                    <option value="http://www.sylywsj.gov.cn/">邵阳旅游网</option>
+                    <option value="http://yytour.yueyang.gov.cn/lyj/index.htm">岳阳旅游网</option>
+                    <option value="http://changdets.com/">常德旅游网</option>
+                    <option value="http://lyj.yiyang.gov.cn/home.html">益阳旅游网</option>
+                    <option value="http://www.czly.czs.gov.cn/lywsj/">郴州旅欧网</option>
+                    <option value="http://www.yzly.gov.cn/">永州旅游网</option>
+                    <option value="http://www.hhly.gov.cn/">怀化旅游网</option>
+                    <option value="http://www.gotold.cn/">娄底旅游网</option>
+                    <option value="http://www.xxly.gov.cn/">湘西旅游网</option>
+                </select>
+                <select onchange="javascript:window.open(this.options[this.selectedIndex].value);this.selectedIndex=0">
+                    <option value="">国际旅游组织</option>
+                    <option value="http://www.fia.com/">国际汽车运动联合会</option>
+                    <option value="http://ec.europa.eu/enterprise/sectors/tourism/index_en.htm">欧盟委员会旅游事务处</option>
+                    <option value="http://www.pata.org/">亚太旅游协会</option>
+                    <option value="http://www.apec.org/">亚太经合组织</option>
+                    <option value="http://www.asta.org/">美国旅行代理商协会</option>
+                    <option value="http://www.womenintourism.gr/annual_convention/index.html">妇女旅游组织国际联合会</option>
+                    <option value="http://ih-ra.com/">国际饭店与餐饮协会</option>
+                </select>
+                <select onchange="javascript:window.open(this.options[this.selectedIndex].value);this.selectedIndex=0">
+                    <option value="">友情链接</option>
+                    <option value="https://www.zjjw.com">张家界旅游官网</option>
+                    <option value="https://www.zjjw.com">张家界旅游网</option>
+                    <option value="http://www.zjjgf.com">张家界旅游集团</option>
+                    <option value="http://www.pinchain.com/">品橙旅游</option>
+                </select>
+            </div>
+            <div class="f-wb">
+                <ul>
+                    <li class="f-wxbox">
+                        <a href="javascript:;">
+                            <img src="images/weixin.png" alt=""><span>关注微信</span><img src="images/wx.jpg" class="wx" />
+                        </a>
+                    </li>
+                    <li><a href=""><img src="images/weibo.png" alt=""><span>关注微博</span></a></li>
+                </ul>
+            </div>
+            <div class="cl"></div>
+            <div class="f-underlink-box cl">
+                <ul>
+                    <li><a href="#"><i class="iconfont">&#xe600;</i><span>投诉中心</span></a></li>
+                    <li><a href="#"><i class="iconfont">&#xe664;</i><span>景区数据</span></a></li>
+                    <li><a href="#"><i class="iconfont">&#xe689;</i><span>全域通</span></a></li>
+                </ul>
+            </div>
+            <div class="links">
+                <dl>
+                    <dt>去旅游</dt>
+                    <dd><a href="#">跟团游</a></dd>
+                    <dd><a href="#">海岛游</a></dd>
+                    <dd><a href="#">自助游</a></dd>
+                    <dd><a href="#">亲子游</a></dd>
+                    <dd><a href="#">蜜月游</a></dd>
+                </dl>
+                <dl>
+                    <dt>乘交通</dt>
+                    <dd><a href="#">机票</a></dd>
+                    <dd><a href="#">机票+酒店</a></dd>
+                    <dd><a href="#">游轮</a></dd>
+                    <dd><a href="#">定制专线</a></dd>
+                    <dd><a href="#">客服推荐</a></dd>
+                </dl>
+                <dl>
+                    <dt>找优惠</dt>
+                    <dd><a href="#">特卖订酒店</a></dd>
+                    <dd><a href="#">积分优惠</a></dd>
+                    <dd><a href="#">银行特惠优</a></dd>
+                    <dd><a href="#">银行分期游</a></dd>
+                </dl>
+                <dl>
+                    <dt>看攻略</dt>
+                    <dd><a href="#">攻略</a></dd>
+                    <dd><a href="#">旅客游记</a></dd>
+                    <dd><a href="#">达人玩法</a></dd>
+                    <dd><a href="#">驴友结伴</a></dd>
+                </dl>
+                <dl>
+                    <dt>查服务</dt>
+                    <dd><a href="#">帮助中心</a></dd>
+                    <dd><a href="#">会员中心</a></dd>
+                    <dd><a href="#">旅行保障</a></dd>
+                    <dd><a href="#">航班查询</a></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!--footer end-->
+</body>
+</html>

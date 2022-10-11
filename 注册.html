@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Comatible" content="ie-edge">
+  <title>用户注册</title>
+</head>
+<body>
+  <form name="formTest" action="save.php" method="post" onreset="alert('请重新填写')" onsubmit="alert ('信息已发送到服务端')"  enctype="mutipart/form-data" >
+  <h4>欢迎来到旅游网！</h4>
+  <table width="500">
+<fieldset>
+      <legend>性别：</legend>
+      <input type="radio" name="sex">男
+      <input type="radio" name="sex">女
+  </fieldset>
+    <!---第二行--->
+    <fieldset>
+      <legend>出生日期</legend>
+          <select name="年">
+
+          <option>--请选择年--</option>
+          <option>1980</option>
+          <option>1981</option>
+          <option>1982</option>
+          <option>1983</option>
+          <option>1984</option>
+          <option>1985</option>
+          <option>1986</option>
+          <option>1987</option>
+          <option>1988</option>
+          <option>1989</option>
+          <option>1990</option>
+          <option>1991</option>
+          <option>1992</option>
+          <option>1993</option>
+          <option>1994</option>
+          <option>1995</option>
+          <option>1996</option>
+          <option>1997</option>
+          <option>1998</option>
+          <option>1999</option>
+          <option>2000</option>
+          <option>2001</option>
+          <option>2002</option>
+          <option>2003</option>
+          </select>
+          <select name="月">
+            <option>--请选择月--</option>
+            <option>01</option>
+            <option>02</option>
+            <option>03</option>
+            <option>04</option>
+            <option>05</option>
+            <option>06</option>
+            <option>07</option>
+            <option>08</option>
+            <option>09</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+          </select>
+          <select name="日">
+            <option>--请选择日--</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+            <option>27</option>
+            <option>28</option>
+            <option>29</option>
+            <option>30</option>
+            <option>31</option>
+          </select>
+        </fieldset>
+
+    <!---第三行--->
+<fieldset>    
+      <legend>
+        所在地区
+      </legend>
+      <legend><input type="text" name="所在地区"></legend>
+      <fieldset> 
+
+    <!---第四行--->
+<fieldset>
+      <legend>
+        昵称
+      </legend>
+      <legend><input type="text" name="name"></legend>
+</fieldset>
+
+       <!--第六行-->
+<fieldset>
+      <legend>
+          密码
+      </legend>
+      <legend><input type="password" name="password"></legend>
+</fieldset>
+<!--第五行-->
+<fieldset>
+      <legend>
+        电话号码
+      </legend>
+      <legend><input type="text" name="phone number"></legend>
+</fieldset>
+    
+    <!--第六行-->
+<filedset>
+      <legend>
+        邮箱地址
+      </legend>
+      <legend><input type="text" name="email"></legend>
+</filedset>
+
+    <!--第七行-->
+<fieldset>
+      <legend>
+        备注
+      </legend>
+      <legend>
+      <textarea type="text" name="备注"></textarea></legend>
+</fieldset>
+
+    <!--第8行-->
+<fieldset>
+      <legend>
+      </legend>
+      <legend><input type="checkbox" checked="checked">我同意注册条款和会员加入标准</legend>
+</fieldset>
+
+    <!--第9行-->
+
+
+<input type="submit" value="提交到服务器"/>
+<input type="reset" value="重新填写"/>
+  </form>
+
+
+
+    <tr>
+      <td>
+      </td>
+      <td><a href="#" >我是会员，立即登录</a> </td>
+    </tr>
+  </table>
+</body>
