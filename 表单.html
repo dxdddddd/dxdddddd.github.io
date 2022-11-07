@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Comatible" content="ie-edge">
+  
+  <title>表单页</title>
+
+  <style type="text/css">
+    table {
+        margin-top: 10px;
+        border-collapse: collapse;
+        border: solid 2px black;
+    }
+
+    th {
+        border: solid 1px black;
+        background-color: #eee;
+        width: 100px;
+        height: 30px;
+    }
+
+    td {
+        border: solid 1px black;
+        height: 30px;
+    }
+</style>
+</head>
+<body>
+    <h1>欢迎来到旅游网！</h1>
+
+    <h2>资讯</h2>
+    
+    <fieldset>旅游地点相关新闻</fieldset>
+  
+    <div class="hotel">
+        <h2>酒店</h2>
+        <div class="hotel_input">
+            酒店介绍：<input type="text" /><br>
+            酒店相册：<input type="file" src="" /><br>
+            酒店评价：<input type="text" /><br>
+        </div>
+     
+      <button type="button" onclick="add1()">创建</button>
+      <button type="button" onclick="reset1()">重置</button>
+      <table class="hotel_tbl">
+          <tr>
+            <th>酒店介绍</th>
+            <th>酒店相册</th>
+            <th>酒店评价</th>
+            <th>操作</th>
+          </tr>
+      </table>
+        </div>
+  
+        <div class="scene">
+            <h2>景点</h2>
+            <div class="scene_input">
+                景点介绍：<input type="text" /><br>
+                交通指南：<input type="text" /><br>
+                游客评价：<input type="text" /><br>
+                景点相册：<input type="file" src="" /><br>
+                
+            </div>
+         
+          <button type="button" onclick="add3()">创建</button>
+          <button type="button" onclick="reset3()">重置</button>
+          <table class="scene_tbl">
+              <tr>
+                <th>景点介绍</th>
+                <th>交通指南</th>
+                <th>游客评价</th>
+                <th>景点相册</th>
+                <th>操作</th>
+              </tr>
+          </table>
+            </div>
+      
+  
+
+
+    <h2>登录</h2>
+    <fieldset>登录/注册</fieldset>
+
+
+  
+  <div class="work">
+    <h2>旅拍作品</h2>
+    <div class="work_input">
+        拍摄时间：<input type="text" /><br>
+        拍摄地点：<input type="text" /><br>
+        作品介绍：<input type="text" /><br>
+        图片：<input type="file" src="" /><br>
+    </div>
+ 
+  <button type="button" onclick="add2()">创建</button>
+  <button type="button" onclick="reset2()">重置</button>
+  <table class="work_tbl">
+      <tr>
+        <th>拍摄时间</th>
+        <th>拍摄地点</th>
+        <th>作品介绍</th>
+        <th>图片</th>
+        <th>操作</th>
+      </tr>
+  </table>
+    </div>
+    
+  <h2>预订</h2>
+  <div class="book">
+    <ul>
+        <li>预定人姓名</li>
+        <input type="text">
+        <li>
+            费用包含：
+            <ul>
+                <li>
+                    跟拍住宿
+                    <span>全程<input type="number">晚住宿</span>
+                </li>
+                <li>
+                    门票
+                    <span>
+                        <input type="checkbox" checked>所列景点门票
+                    </span>
+                </li>
+                <li>
+                    拍摄道具
+                    <span>
+                        <input type="checkbox" checked>妆面
+                        <input type="checkbox" checked>服饰
+                        <input type="checkbox" checked>拍摄设备
+                    </span>
+                    <li>
+                      交通
+                      <span>
+                          往返<input type="text">的交通费用
+                      </span>
+                  </li>
+                  <li>
+                    其他
+                    <span>
+                        <input type="checkbox" checked>单房差
+                        <input type="checkbox" checked>发票
+                    </span>
+                </li>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script src="./work.js"></script>
+</body>
+</html>
