@@ -1,0 +1,83 @@
+
+body {
+    background-color: #f2cc81;
+}
+
+/* 外部容器样式设置 */
+.wrapper {
+    width: 400px;
+    height: 500px;
+    background-color:rgb(249, 152, 67);
+    background-size: contain;
+    border-radius: 15px;
+    opacity: .6;
+    margin: auto;
+}
+
+/* 内部容器样式设置 */
+.inner {
+    width: 300px;
+    height: 500px;
+    margin: 50px auto;
+}
+
+/* 提交留言按钮样式设置 */
+#student {
+    outline: none;
+    resize: none;
+    margin-top: 20px;
+}
+
+#btn {
+    display: block;
+    width: 100px;
+    height: 40px;
+    margin: 20px 0 20px 0;
+    font-size: 17px;
+
+    color: rgb(90, 88, 88);
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid gray;
+}
+
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#text {
+    float: right;
+    margin-top: 10px;
+    font-size:14px;
+}
+
+#text-now {
+    color: #777;
+}
+
+/* 呈现留言区域样式设置 */
+ul {
+    margin-top: 10px;
+}
+
+ul>li {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #999;
+    font-size: 18px;
+    font-weight:bold;
+}
+
+ul>li>div {
+    float: right;
+}
+
+ul>li>div>button {
+    width: 50px;
+    height: 25px;
+    color: #333;
+    margin-left: 5px;
+}
