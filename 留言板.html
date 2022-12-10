@@ -1,0 +1,75 @@
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>留言板</title>
+     <link rel="stylesheet" href="./css/normalize.css">
+     <link rel="stylesheet" href="./css/留言板.css" >
+ </head>
+ 
+ <body>
+    <!-- 外部容器 -->
+ <div class="wrapper">
+    <!-- 内部容器 -->
+    <div class="inner">
+        <!-- 输入留言区域 -->
+        <textarea name="student" id="student" cols="40" rows="10"></textarea>
+        <!-- 统计文本域中的字数 -->
+        <p id="text">已输入字数：
+            <span id="text-now">0</span>/100
+        </p>
+        <!-- 提交留言按钮 -->
+        <input type="button" id="btn" value="提交留言">
+        <p>留言列表</p>
+        <!-- 呈现留言区域 -->
+        <ul>
+        </ul>
+    </div>
+</div>
+
+<script>
+    // 获取提交留言按钮
+    var btn = document.getElementById('btn');
+    // 获取留言板
+    var msg = document.getElementById('student');
+    // 获取呈现留言区域
+    var ul = document.querySelector('ul');
+    // 获取每一个li
+    var li = ul.children;
+    // 获取删除留言按钮
+    var del = document.getElementById('del');
+    // 获取统计文本域中文字的元素
+    var text = document.getElementById('text-now');
+
+    // 为提交留言按钮添加单击事件
+    btn.onclick = function () {
+        if (msg.value == '') {
+            alert('留言不可为空哦！');
+        } else {
+            var li = document.createElement('li');
+            var date = new Date();
+            var time = date.toLocaleDateString();
+            li.innerHTML = msg.value + '<div>' + '<span>' + time + '</span>' + '<button>' + '删除' + '</button>' + '</div>';
+            var length = (msg.value).length;
+            if (length > 100) {
+                alert('当前输入字符长度不可超过100！');
+                msg.value = '';
+            } else {
+                text.innerText = length;
+                ul.insertBefore(li, ul.children[0]);
+                msg.value = '';
+            }
+            ul.addEventListener('click', function (event) {
+                if (event.target.nodeName == 'BUTTON') {
+                    ul.removeChild(event.target.parentNode.parentNode);
+                }
+            }, false);
+        }
+    }
+</script>
+</body>
+</html>

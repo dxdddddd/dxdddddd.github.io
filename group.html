@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预订</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/book.css">
+</head>
+<body>
+<!--头部-->
+<div id="reg_header">
+    <div class="reg_h_center">
+        <div class="reg_h_left">
+            <h3>欢迎预订！</h3>
+        </div>
+    </div>
+</div>
+
+
+<!--表单内容-->
+<div class="reg_back">
+    <div class="reg_left">
+        <p>旅拍预订</p>
+    </div>
+    <div class="reg_center">
+        <div class="reg_form">
+            <form action="#" method="post">
+                <table>
+                    <tr>
+                        <td class="td_left"><label for="username">预订人姓名</label></td>
+                        <td class="td_right"><input type="text" name="username" placeholder="请输入姓名"
+                                                    id="username"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="Email">Email</label></td>
+                        <td class="td_right"><input type="email" name="email" placeholder="请输入Email" id="Email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="Telphone">手机号</label></td>
+                        <td class="td_right"><input type="text" name="telphone" placeholder="请输入您的手机号"
+                                                    id="Telphone"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="number">跟拍住宿</label></td>
+                        <td class="td_right"> 全程<input type="number">晚住宿</td>
+                    </tr>
+                 
+                    <tr>
+                        <td class="td_left"><label>门票</label></td>
+                        <td class="td_right"><input type="checkbox"  checked> 所列景点门票
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label>拍摄道具</label></td>
+                        <td class="td_right"><input type="checkbox" checked>妆面
+                            <input type="checkbox" checked>服饰
+                            <input type="checkbox" checked>拍摄设备</td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label>交通</label></td>
+                        <td class="td_right"> 往返<input type="text">的交通费用</td>
+                    </tr>
+                    <tr>
+                        <td class="td_left"><label for="checkcode">验证码</label></td>
+                        <td class="td_right"><input type="text" name="checkcode" id="checkcode">
+                            <img src="images/check.png" id="img_check"></td>
+                    </tr>
+                    <tr >
+                    <td id="btn_sub" colspan="2" align="center">  <a href="index.html">提交</a></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="reg_right">
+        <p><a href="register.html">立即登录</a></p>
+    </div>
+</div>
+</body>
+</html>
