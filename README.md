@@ -1,2 +1,0 @@
-# dxdddddd.github.io
-welcome
